@@ -1,0 +1,14 @@
+$ git remote add origin git@bitbucket.org:<username>/sample_app.git
+$ git push -u origin --all # pushes up the repo and its refs for the first time
+
+$ git checkout -b static-pages
+
+$ git checkout master
+$ git merge static-pages
+
+$git remote add [new remote name] [repo url]
+$git fetch [new remote name] [remote branch]
+
+$ git clone
+$ git checkout [branch name]
+$ git branch --all

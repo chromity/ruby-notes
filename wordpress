@@ -1,0 +1,15 @@
+k wp-content/themes/[theme-name]
+
+files:
+  - style.css
+  - template files
+    - index.php
+
+https://github.com/kermage/generator-themeplate
+https://www.sitepoint.com/fast-gulp-wordpress-theme-development-workflow/
+
+commands to generate the theme:
+  - gulp php
+  - gulp images
+  - gulp js
+  - # run everything - $ gulp.task('build', ['php'], 'css', 'js']);

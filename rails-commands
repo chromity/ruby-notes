@@ -1,0 +1,15 @@
+
+$ rails generate controller StaticPages home help
+$ rails generate model User name:string email:string
+
+$ rails destroy  controller StaticPages home help
+$ rails destroy model User
+
+$ rails db:migrate
+$ rails db:rollback
+
+$ rails db:migrate VERSION=0
+
+$ rails server -b $IP -p $PORT
+
+$ spring stop

@@ -1,0 +1,21 @@
+** Heroku
+- Download the Heroku Toolbelt
+- Install and configure correct database gem
+  - use 'pg' for production then $ bundle install --without production
+- Create the application using $ heroku create
+- Push the app $ git push heroku master
+- Setup the database $ heroku run rails db:migrate
+
+* Links
+[Prevent Heroku from idling by pinging]
+  (https://coderwall.com/p/u0x3nw/avoid-heroku-idling-with-new-relic-pings)
+
+* Essential Commands
+$ heroku run rails db:migrate
+$ heroku run console
+$ heroku logs -t
+$ heroku restart
+$ heroku config:set YOUR_VARIABLE=some_value
+  # environment variables
+$ heroku releases
+$ heroku releases:rollback [version-number]

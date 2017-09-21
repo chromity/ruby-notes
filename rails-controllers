@@ -1,0 +1,22 @@
+def whitelisted_post_params
+  params.require(:post).permit(:title, :body, :author_id)
+end
+
+def create
+  @post = Post.new(whitelisted_post_params)
+
+  ...
+end
+
+flash[:success] = "Great! Your post has been created!"
+
+redirect - erases all except the flash
+render - uses a view file, flash.now[:error] = "Rats!"
+
+
+# Controller Naming Convention
+Rails favors pluralization of the last word in the controller's name.
+
+# Parameters
+**Query String Paramater** - Part of the URL
+**POST data** - can only be sent as part of an HTTP POST request

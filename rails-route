@@ -1,0 +1,71 @@
+
+root :to => "kittens#index"
+
+REST
+1) index - GET
+2) show - GET
+3) new - GET
+4) create - POST
+5) edit - GET
+6) update - PUT
+7) destroy - DELETE
+
+config/routes.rb
+  ...
+  resources :posts
+  ...
+
+link_to "Edit this post", edit_post_path(3)
+
+_path - generate the path portion of the url
+_url - generate the full url
+
+
+resources :posts, :only => [:index, :show]
+resources :users, :except => [:index]
+
+get '/somepath' => 'somecontroller#someaction'
+get '/patients/:id', to: 'patients#show'
+
+----
+
+namespace :admin do
+  resources :articles, :comments
+end
+
+# without the prefix /admin
+scope module: 'admin' do
+  resources :articles, :comments
+end
+
+# single case
+resources :articles, module: 'admin'
+
+----
+
+# Without the Admin::module
+scope '/admin' do
+  resources :articles, :comments
+end
+
+resources :articles, path: '/admin/articles'
+
+----
+
+nested resources
+
+resources :magazines do
+  resources :ads
+end
+
+
+----
+get 'photos/:id', to: 'photos#show', defaults: { format: 'jpg'}
+
+
+----
+
+EDIT
+
+
+resources :photos, path_names: { new: 'make', edit: 'change'}

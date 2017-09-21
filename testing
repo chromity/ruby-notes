@@ -1,0 +1,3 @@
+require "minitest/reporters"
+gem "minitest-reporters"
+Minitest::Reporters.use!

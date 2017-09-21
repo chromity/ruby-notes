@@ -1,0 +1,45 @@
+for gem files:
+  ~> -- this specifies to use the last digit only
+  >= -- this specifies to use equal or newer version 
+
+to start server:
+  % rails server
+    - can also specify IP and PORT by using "-b $IP -p $PORT" 
+  % bundle install --without production
+
+what i did with the app:
+  % rails generate model Article
+  - modified the /db/migrate
+  % rake db:migrate
+  - modify the route
+    - added "resources :articles"
+  % rails generate controller articles
+  - modify app/views/articles/index.html.erb
+  
+so in rails, if <% then the result of the code will be hidden
+elsif <%=, then the result of the ruby code will be output in place of the clause
+
+link_to - the text you want the link to say
+
+<%= link_to article.title, article_path(article), class: 'article_title' %>
+# adding html attribs to a link - class: 'class_here'
+
+git remote add origin git@github.com:chromity/reponame.git
+
+heroku run rake db:migrate
+
+to display errors:
+  <% @obj.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+
+flash.notice
+helper
+  article_params
+   params.require(:article).permit(:title, :body)
+
+rails g model Obj primkey:references
+
+has_attached_file :image
+validates_attachment_content_type :image, :content_type => ["image/jpg"]
+

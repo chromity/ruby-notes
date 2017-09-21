@@ -1,0 +1,32 @@
+resources :zombies, except: :destroy
+resources :zombies, only: :index
+
+resources :zombies, except: [:index, :destroy]
+
+with_options only: :index do |list_only|
+  list_only.resources :zombies
+end
+
+// access using subdomain api only
+resources :zombies, constraints: { subdomain: 'api'}
+
+constraints subdomain: 'api' do
+  resources :zombies
+  resources :humans
+end
+
+
+configure hostfile to use it in dev
+
+namespace :api, path: '/' do
+  resources :zombies
+end
+
+
+config/initializers/inflections.rb
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.acronym 'API'
+end
+
+module API
+end

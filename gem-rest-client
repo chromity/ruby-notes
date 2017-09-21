@@ -1,0 +1,4 @@
+** querying google
+```
+RestClient.get "https://google.com/search", { :param => { :q => param} }
+```

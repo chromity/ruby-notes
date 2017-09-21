@@ -1,0 +1,83 @@
+## Partials
+
+<%= render "user_form" %> # wherein user_form is _user_form.html.erb
+                          # app/views/controllers or app/views/shared
+                          $ <%= render "shared/some_partial" %>
+
+# Passing variables to partials
+
+<%= render "shared/your_partial", :locals => { :user => user } %>
+
+To use the variable in a partial file, drop the @ can call it like a normal
+variable
+
+
+# app/views/index.html.erb
+  <h1>Users</h1>
+  <ul>
+    <% @users.each do |user| %>
+      <%= render "user", :locals => {:user => user} %>
+    <% end %>
+  </ul>
+
+  # app/views/_user.html.erb
+  <li><%= "#{user.first_name} #{user.last_name}, #{user.email}" %></li>
+
+
+  # or <%= render user %>
+
+  # or <%= render @users %> to avoid looping
+
+
+  <a href="<%= users_path %>"See All Users<a/>
+
+  instead use
+
+  <%= link_to "See All Users", users_path %>
+
+
+  Asset Tags
+  <%= stylesheet_link_tag "stylesheetname" %>
+  <%= javascript_include_tag "javascriptfile" %>
+  <%= image_tag "image heh.jpg" %>
+
+  all located in /assets/
+
+
+
+  render
+  redirect_to
+  head
+
+
+  render "edit" - action controller
+  render js: "jscodehrere"
+  render json: @product
+
+options for render
+:content_type
+:layout
+:location
+:status
+:formats
+
+
+we can specify layout for controller using
+``` layout "inventory" ```
+
+app/views/layouts/inventory.html.erb
+
+
+redirect_back(fallback_location: root_path)
+
+image_tag options, alt, size, id, class, {height: x}.
+
+
+<%= yield :head %>
+is partnered with
+<% content_for :head do %>
+<% end %>
+
+, locals: {var: @var}
+
+sym: is equiv to :sym =>
