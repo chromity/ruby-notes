@@ -1,0 +1,8 @@
+# Asset Organization
+- app/assets  // for assets that are owned by the application
+- lib/assets  // for assets that are owned by the libr
+- vendor/assets   // assets that are owned by outside entities
+
+//= require library_name  // lib stored in lib/assets/javascripts/library_name/index.js
+
+
