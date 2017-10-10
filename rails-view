@@ -1,3 +1,4 @@
+ndi?
 ## Partials
 
 <%= render "user_form" %> # wherein user_form is _user_form.html.erb
@@ -81,3 +82,18 @@ is partnered with
 , locals: {var: @var}
 
 sym: is equiv to :sym =>
+
+
+
+gem for bootstrap:
+bootstrap sass
+
+then go to app/assets/stylesheets/custom.scss
+@import "bootstrap-sprockets"
+@import "bootstrap"
+
+#parent {
+  &:hover {
+
+  }
+}

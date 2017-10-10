@@ -5,4 +5,6 @@
 
 //= require library_name  // lib stored in lib/assets/javascripts/library_name/index.js
 
+add .erb to css asset to have access to asset_path 'filename' 
+
 
